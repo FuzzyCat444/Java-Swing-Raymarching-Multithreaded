@@ -13,7 +13,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.event.WindowAdapter;
@@ -96,9 +95,9 @@ public class Main extends JPanel implements Runnable, KeyListener, MouseListener
 	 */
 	public void beginLoop() {
 		int s = 330;
-		int[] torusVoxelMap = VoxelFile.loadBitmap("skull_330x.bin", s, s, s);
-		double[] torusDistanceField = DistanceFieldGenerator.createSignedDistanceFieldFromMap(VoxelFile.createDistanceMapFromBitmap(torusVoxelMap, s, s, s), s, s);
-		double[] torusNormalField = NormalFieldGenerator.createNormalFieldFromSignedDistanceField(torusDistanceField, s, s, 7);
+		int[] voxelMap = VoxelFile.loadBitmap("skull_330x.bin", s, s, s);
+		double[] distanceField = DistanceFieldGenerator.createSignedDistanceFieldFromMap(VoxelFile.createDistanceMapFromBitmap(voxelMap, s, s, s), s, s);
+		double[] normalField = NormalFieldGenerator.createNormalFieldFromSignedDistanceField(distanceField, s, s, 7);
 		
 		numFrames = 0;
 		startTime = System.nanoTime();
@@ -125,8 +124,8 @@ public class Main extends JPanel implements Runnable, KeyListener, MouseListener
 		renderContext.photoSphereColor = photoSphereData;
 		renderContext.photoSphereHeight = photoSphereColor.getHeight();
 		renderContext.screenPixels = screenData;
-		renderContext.sdf = torusDistanceField;
-		renderContext.normals = torusNormalField;
+		renderContext.sdf = distanceField;
+		renderContext.normals = normalField;
 		renderContext.diffuseSpecularRatio = 0.3;
 		renderContext.diffuseColor = 0xffffff;
 		renderContext.voxelsDimension = s;
