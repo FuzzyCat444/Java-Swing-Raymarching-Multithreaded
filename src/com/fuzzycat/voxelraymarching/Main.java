@@ -28,7 +28,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import com.fuzzycat.distancefunction.util.MathUtil;
+import com.fuzzycat.voxelraymarchin.util.MathUtil;
 import com.fuzzycat.voxelraymarching.graphics.Camera;
 import com.fuzzycat.voxelraymarching.graphics.Render;
 import com.fuzzycat.voxelraymarching.graphics.RenderContext;
@@ -92,6 +92,8 @@ public class Main extends JPanel implements Runnable, KeyListener, MouseListener
 	 *   beach_blurred_1.png
 	 *   diffuseSpecularRatio = 0.3
 	 *   diffuseColor = 0xffffff
+	 *   
+	 * See "VoxelFile.java" to create your own voxel models
 	 */
 	public void beginLoop() {
 		int s = 330;

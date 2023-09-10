@@ -1,6 +1,6 @@
 package com.fuzzycat.voxelraymarching.graphics;
 
-import com.fuzzycat.distancefunction.util.MathUtil;
+import com.fuzzycat.voxelraymarchin.util.MathUtil;
 
 public class RenderThread extends Thread {
 	private boolean running;
