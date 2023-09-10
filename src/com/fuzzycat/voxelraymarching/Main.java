@@ -28,11 +28,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import com.fuzzycat.voxelraymarchin.util.MathUtil;
 import com.fuzzycat.voxelraymarching.graphics.Camera;
 import com.fuzzycat.voxelraymarching.graphics.Render;
 import com.fuzzycat.voxelraymarching.graphics.RenderContext;
 import com.fuzzycat.voxelraymarching.graphics.Vector3;
+import com.fuzzycat.voxelraymarching.util.MathUtil;
 import com.fuzzycat.voxelraymarching.voxel.DistanceFieldGenerator;
 import com.fuzzycat.voxelraymarching.voxel.NormalFieldGenerator;
 import com.fuzzycat.voxelraymarching.voxel.VoxelFile;
